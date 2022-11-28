@@ -1,0 +1,16 @@
+{
+  "name": "project-horizon",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "pnpm run -r --parallel dev",
+    "api": "pnpm run -r --filter ./apps/api dev",
+    "client": "pnpm run -r --filter ./apps/client dev",
+    "web": "pnpm run -r --filter ./apps/client --filter ./apps/api dev",
+    "bot": "pnpm run -r --filter ./apps/bot dev",
+    "bdd": "docker-compose up -d"
+  },
+  "keywords": [],
+  "author": "Katsuo - Team Horizon",
+  "license": "ISC"
+}

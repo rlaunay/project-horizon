@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: postgres:14
+    ports:
+      - '127.0.0.1:5432:5432'
+    volumes:
+      - psql-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+
+  redis:
+    container_name: redis
+    image: redis:7-alpine
+    volumes:
+      - redis_volume:/data
+    ports:
+      - 6379:6379
+
+volumes:
+  psql-data:
+  redis_volume:
