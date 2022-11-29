@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -8,9 +8,15 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import styles from "@/styles/app.css";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: styles }
+]
+
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "New Remix App",
+  title: "Horizon JDR",
   viewport: "width=device-width,initial-scale=1",
 });
 
@@ -22,6 +28,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <div className="salut" >Salut</div>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
