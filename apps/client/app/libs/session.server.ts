@@ -8,7 +8,7 @@ const sessionStorage = createCookieSessionStorage({
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'lax',
-    maxAge: 30 * 24 * 60 * 6, // 30 days
+    maxAge: 60 * 60 * 24 * 7, // 30 days
   }
 });
 
